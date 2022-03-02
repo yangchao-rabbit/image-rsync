@@ -3,5 +3,5 @@ auth:
     username: USERNAME
     password: PASSWORD
 images:
-  k8s.gcr.io/ingress-nginx/controller: yc-gcr-rsync/ingress-nginx-controller
-  k8s.gcr.io/ingress-nginx/kube-webhook-certgen: yc-gcr-rsync/ingress-nginx-kube-webhook-certgen
+  k8s.gcr.io/ingress-nginx/controller: registry.cn-beijing.aliyuncs.com/yc-gcr-rsync/ingress-nginx-controller
+  k8s.gcr.io/ingress-nginx/kube-webhook-certgen: registry.cn-beijing.aliyuncs.com/yc-gcr-rsync/ingress-nginx-kube-webhook-certgen
