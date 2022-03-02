@@ -1,10 +1,11 @@
 #!/bin/bash
 
-src_image=("k8s.gcr.io/ingress-nginx/controller:v1.1.1" "k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.1.1")
-dest_image=("yangchao1/ingress-nginx-controller:v1.1.1" "yangchao1/ingress-nginx-kube-webhook-certgen:v1.1.1")
+set -e
 
-for i in {0..1} ; do
-  docker pull ${src_image[i]}
-  docker tag ${src_image[i]} ${dest_image[i]}
-  docker pull ${dest_image[i]}
-done
+docker pull $1
+sleep 1
+docker tag $1 $2
+sleep 1
+docker pull $2
+
+exit 0

@@ -29,11 +29,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: python
-        run: python3 -V
-
       - name: docker login
         run: docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}
 
       - name: rsync
-        run: sh rsync.sh
+        run: python3 image_rsync.py
