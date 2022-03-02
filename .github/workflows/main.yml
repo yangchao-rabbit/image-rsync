@@ -34,9 +34,6 @@ jobs:
           wget https://github.com/AliyunContainerService/image-syncer/releases/download/${IMAGE_SYNCER_VERSION}/image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz
           tar -zxf image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz
       
-      - name: ping
-        run: ping -c 5 registry.cn-beijing.aliyuncs.com
-        
       - name: init config.yaml with env
         run: |
           sed -i "s#USERNAME#${DOCKERHUB_USERNAME}#g" config.yaml
