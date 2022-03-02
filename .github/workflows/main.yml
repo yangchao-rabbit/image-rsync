@@ -13,7 +13,7 @@ on:
     - cron: '0 23 * * *'
   
 env:
-  IMAGE_SYNCER_VERSION: v1.3.1
+  IMAGE_SYNCER_VERSION: v1.3.0
   DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
   DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
 
@@ -33,9 +33,6 @@ jobs:
         run: |
           wget https://github.com/AliyunContainerService/image-syncer/releases/download/${IMAGE_SYNCER_VERSION}/image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz
           tar -zxf image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz
-      
-      - name: check config
-        run: cat config.yaml
         
       - name: init config.yaml with env
         run: |
