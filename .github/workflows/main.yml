@@ -43,14 +43,14 @@ jobs:
         run: |
             ./image-syncer --proc=20 --auth=auth.json --images=images.json --retries=1
 
-#      - name: docker login
-#        run: docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}
-#
-#      - name: pull
-#        run: |
-#          - docker pull k8s.gcr.io/ingress-nginx/controller:v1.1.1
-#          - docker tag k8s.gcr.io/ingress-nginx/controller:v1.1.1 yangchao1/ingress-nginx-controller:v1.1.1
-#          - docker push yangchao1/ingress-nginx-controller:v1.1.1
+      - name: docker login
+        run: docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}
+
+      - name: pull
+        run: |
+            docker pull k8s.gcr.io/ingress-nginx/controller:v1.1.1
+            docker tag k8s.gcr.io/ingress-nginx/controller:v1.1.1 yangchao1/ingress-nginx-controller:v1.1.1
+            docker push yangchao1/ingress-nginx-controller:v1.1.1
 #
 #      - name: rsync
 #        run: python3 image_rsync.py
