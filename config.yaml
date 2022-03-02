@@ -1,5 +1,5 @@
 auth:
-  registry.hub.docker.com:
+  hub.docker.com:
     username: USERNAME
     password: PASSWORD
 images:
