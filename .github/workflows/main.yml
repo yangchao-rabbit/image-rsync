@@ -29,14 +29,28 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: docker login
-        run: docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}
-
-      - name: pull
+      - name: install image-sync tool
         run: |
-          - docker pull k8s.gcr.io/ingress-nginx/controller:v1.1.1
-          - docker tag k8s.gcr.io/ingress-nginx/controller:v1.1.1 yangchao1/ingress-nginx-controller:v1.1.1
-          - docker push yangchao1/ingress-nginx-controller:v1.1.1
+            wget https://github.com/AliyunContainerService/image-syncer/releases/download/${IMAGE_SYNCER_VERSION}/image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz
+            tar -zxf image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz
 
-      - name: rsync
-        run: python3 image_rsync.py
+      - name: init auth with env
+        run: |
+            sed -i "s#USERNAME#${DOCKERHUB_USERNAME}#g" auth.json
+            sed -i "s#PASSWORD#${DOCKERHUB_PASSWORD}#g" auth.json
+
+      - name: sync images
+        run: |
+            ./image-syncer --proc=20 --auth=auth.json --images=images.json --retries=1
+
+#      - name: docker login
+#        run: docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}
+#
+#      - name: pull
+#        run: |
+#          - docker pull k8s.gcr.io/ingress-nginx/controller:v1.1.1
+#          - docker tag k8s.gcr.io/ingress-nginx/controller:v1.1.1 yangchao1/ingress-nginx-controller:v1.1.1
+#          - docker push yangchao1/ingress-nginx-controller:v1.1.1
+#
+#      - name: rsync
+#        run: python3 image_rsync.py
