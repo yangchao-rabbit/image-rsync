@@ -29,6 +29,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
+      - name: docker login
+        run: docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}
+      
       - name: rsync docker image
         run: sh rsync.sh
 
