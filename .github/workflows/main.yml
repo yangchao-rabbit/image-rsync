@@ -30,7 +30,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: docker login
-        run: docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}
+        run: docker login registry.hub.docker.com -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}
 
       - name: rsync
         run: python3 image_rsync.py
