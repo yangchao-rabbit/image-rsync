@@ -38,6 +38,9 @@ jobs:
         run: |
           sed -i "s#USERNAME#${DOCKERHUB_USERNAME}#g" auth.json
           sed -i "s#PASSWORD#${DOCKERHUB_PASSWORD}#g" auth.json
+
+      - name: docker login
+        run: docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}
         
       - name: sync images
         run: |
