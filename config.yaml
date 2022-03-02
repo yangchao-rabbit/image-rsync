@@ -1,7 +1,7 @@
 auth:
-  registry.cn-beijing.aliyuncs.com:
+  registry.hub.docker.com:
     username: USERNAME
     password: PASSWORD
 images:
-  k8s.gcr.io/ingress-nginx/controller:v1.1.1: registry.cn-beijing.aliyuncs.com/yc-gcr-rsync/ingress-nginx-controller:v1.1.1
-  k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.1.1: registry.cn-beijing.aliyuncs.com/yc-gcr-rsync/ingress-nginx-kube-webhook-certgen:v1.1.1
+  k8s.gcr.io/ingress-nginx/controller:v1.1.1: yangchao1/ingress-nginx-controller:v1.1.1
+  k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.1.1: yangchao1/ingress-nginx-kube-webhook-certgen:v1.1.1
