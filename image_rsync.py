@@ -14,4 +14,4 @@ dest_image = [
 
 if __name__ == '__main__':
     for i in range(len(src_image)):
-        os.system("sh rsync.sh {} {}".format(src_image[i], dest_image[i]))
+        os.system("sh rsync.sh {} {}".format(src_image[i], "registry.hub.docker.com/" + dest_image[i]))
