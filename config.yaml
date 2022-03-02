@@ -1,0 +1,12 @@
+auth:
+  registry.cn-beijing.aliyuncs.com:
+    username: USERNAME
+    password: PASSWORD
+images:
+  k8s.gcr.io/sig-storage/csi-attacher: yc-gcr-rsync/csi-attacher
+  k8s.gcr.io/sig-storage/csi-provisioner: yc-gcr-rsync/csi-provisioner
+  k8s.gcr.io/sig-storage/csi-node-driver-registrar: yc-gcr-rsync/csi-node-driver-registrar
+  k8s.gcr.io/sig-storage/csi-resizer: yc-gcr-rsync/csi-resizer
+  k8s.gcr.io/sig-storage/csi-snapshotter: yc-gcr-rsync/csi-snapshotter
+  k8s.gcr.io/ingress-nginx/controller: yc-gcr-rsync/ingress-nginx-controller
+  k8s.gcr.io/ingress-nginx/kube-webhook-certgen: yc-gcr-rsync/ingress-nginx-kube-webhook-certgen
