@@ -36,9 +36,9 @@ jobs:
       
       - name: init config.yaml with env
         run: |
-          sed -i "s#USERNAME#${DOCKERHUB_USERNAME}#g" config.yaml
-          sed -i "s#PASSWORD#${DOCKERHUB_PASSWORD}#g" config.yaml
+          sed -i "s#USERNAME#${DOCKERHUB_USERNAME}#g" auth.json
+          sed -i "s#PASSWORD#${DOCKERHUB_PASSWORD}#g" auth.json
         
       - name: sync images
         run: |
-          ./image-syncer --proc=20 --config=config.yaml --retries=2
+          ./image-syncer --proc=20 --auth=auth.json --images=images.json --retries=2

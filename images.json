@@ -1,0 +1,4 @@
+{
+  "k8s.gcr.io/ingress-nginx/controller": "yangchao1/ingress-nginx-controller",
+  "k8s.gcr.io/ingress-nginx/kube-webhook-certgen": "yangchao1/ingress-nginx-kube-webhook-certgen"
+}
