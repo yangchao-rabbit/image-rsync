@@ -33,6 +33,9 @@ jobs:
         run: |
           wget https://github.com/AliyunContainerService/image-syncer/releases/download/${IMAGE_SYNCER_VERSION}/image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz
           tar -zxf image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz
+      
+      - name: check config
+        run: cat config.yaml
         
       - name: init config.yaml with env
         run: |
