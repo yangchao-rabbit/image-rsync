@@ -34,7 +34,7 @@ jobs:
           wget https://github.com/AliyunContainerService/image-syncer/releases/download/${IMAGE_SYNCER_VERSION}/image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz
           tar -zxf image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz
       
-      - name: init config.yaml with env
+      - name: init auth.json with env
         run: |
           sed -i "s#USERNAME#${DOCKERHUB_USERNAME}#g" auth.json
           sed -i "s#PASSWORD#${DOCKERHUB_PASSWORD}#g" auth.json
