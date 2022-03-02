@@ -32,6 +32,12 @@ jobs:
       - name: docker login
         run: docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}
       
+      - name: docker pull
+        run: |
+          docker pull busybox
+          docker tag busybox yangchao1/busybox
+          docker push yangchao1/busybox
+      
       - name: rsync docker image
         run: sh rsync.sh
 
