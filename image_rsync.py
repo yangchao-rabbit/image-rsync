@@ -3,15 +3,17 @@
 import os
 
 src_image = [
-    "k8s.gcr.io/ingress-nginx/controller:v1.1.1",
-    "k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.1.1",
-    "gcr.io/google-samples/xtrabackup:1.0"
+    # "k8s.gcr.io/ingress-nginx/controller:v1.1.1",
+    # "k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.1.1",
+    # "gcr.io/google-samples/xtrabackup:1.0"
+    "k8s.gcr.io/metrics-server/metrics-server:v0.6.1"
 ]
 
 dest_image = [
-    "yangchao1/ingress-nginx-controller:v1.1.1",
-    "yangchao1/ingress-nginx-kube-webhook-certgen:v1.1.1",
-    "yangchao1/xtrabackup:1.0"
+    # "yangchao1/ingress-nginx-controller:v1.1.1",
+    # "yangchao1/ingress-nginx-kube-webhook-certgen:v1.1.1",
+    # "yangchao1/xtrabackup:1.0"
+    "yangchao1/metrics-server:v0.6.1"
 ]
 
 if __name__ == '__main__':
