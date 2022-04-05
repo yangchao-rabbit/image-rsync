@@ -6,14 +6,16 @@ src_image = [
     # "k8s.gcr.io/ingress-nginx/controller:v1.1.1",
     # "k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.1.1",
     # "gcr.io/google-samples/xtrabackup:1.0"
-    "gcr.io/cadvisor/cadvisor:v0.39.3"
+    # "gcr.io/cadvisor/cadvisor:v0.39.3"
+    "k8s.gcr.io/hpa-example"
 ]
 
 dest_image = [
     # "yangchao1/ingress-nginx-controller:v1.1.1",
     # "yangchao1/ingress-nginx-kube-webhook-certgen:v1.1.1",
     # "yangchao1/xtrabackup:1.0"
-    "yangchao1/cadvisor:v0.39.3"
+    # "yangchao1/cadvisor:v0.39.3"
+    "yangchao1/hpa-example"
 ]
 
 if __name__ == '__main__':
