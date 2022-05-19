@@ -5,17 +5,19 @@ import os
 src_image = [
     # "k8s.gcr.io/ingress-nginx/controller:v1.1.1",
     # "k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.1.1",
-    # "gcr.io/google-samples/xtrabackup:1.0"
-    # "gcr.io/cadvisor/cadvisor:v0.39.3"
-    "k8s.gcr.io/hpa-example"
+    # "gcr.io/google-samples/xtrabackup:1.0",
+    # "gcr.io/cadvisor/cadvisor:v0.39.3",
+    # "k8s.gcr.io/hpa-example",
+    "k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.4.2"
 ]
 
 dest_image = [
     # "yangchao1/ingress-nginx-controller:v1.1.1",
     # "yangchao1/ingress-nginx-kube-webhook-certgen:v1.1.1",
-    # "yangchao1/xtrabackup:1.0"
-    # "yangchao1/cadvisor:v0.39.3"
-    "yangchao1/hpa-example"
+    # "yangchao1/xtrabackup:1.0",
+    # "yangchao1/cadvisor:v0.39.3",
+    # "yangchao1/hpa-example",
+    "yangchao1/kube-state-metrics:v2.4.2"
 ]
 
 if __name__ == '__main__':
